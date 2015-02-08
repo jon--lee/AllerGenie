@@ -33,7 +33,7 @@ body
 #content
 {
 	width:100%;
-    	height:500px;
+    	height:550px;
     	padding-top:20px;
     	background-size: 100% 100%;
     	background-repeat: no-repeat;
@@ -55,6 +55,17 @@ body
 	font-size:16;
 	font-weight:lighter;
 }
+
+h3
+{
+	border:3px solid #FA5858;
+	padding:10px;
+	width:350px;
+	border-radius:5px;
+	font-size:14;
+	font-weight:lighter;
+}
+
 #section input
 {
 	outline:none;
@@ -86,23 +97,43 @@ body
 {
 	text-decoration:none;
 	color:black;
+	font-weight:lighter;
 	text-align:center;
+}
+
+#printable a div:hover
+{
+	color:#FA5858;
+}
+
+#printable a div:active
+{
+	background:#EEE;
+	color:#FA5858;
+}
+
+#printable h3 span 
+{
+	cursor:pointer;
+	text-decoration:underline;
+	color:#919191;
 }
 
 #printable div
 {
+	margin-left:30px;
+	padding:5px;
 	background:#FFF;
 	width:350px;
 	border:1px solid #E1E1E1;
+	border-bottom:0px;
 	height:30px;
-
-
 }
 
 #section button
 {
 	outline:none;
-	background:#41cb41;
+	background:#FA5858;
 	border:0px;
 	border-bottom-left-radius:3px;
 	border-bottom-right-radius:3px;
@@ -117,7 +148,7 @@ body
 
 #section button:active
 {
-    background:#3eb93e;
+	background:#E04E4E;
 }
 
 
@@ -151,3 +182,15 @@ body
 	display:inline;	
 }
 
+#reviews {
+	min-height:30px;
+	padding-top:50px;
+	width: 80%;
+}
+
+#review {
+	min-height:50px;
+	font-family:Times;
+	font-style:italic;
+	
+}

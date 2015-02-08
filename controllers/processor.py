@@ -38,12 +38,12 @@ def process(reviews, keywords):
                         j += 2
                     startIndex = j
 
-                    if(i - startIndex > 75):
-                        startIndex = i - 75
+                    if(i - startIndex > 120):
+                        startIndex = i - 120
                     #print "start: " + str(startIndex)
-                    if (endIndex - i > 75):
-                        endIndex = i + 75
+                    if (endIndex - i > 120):
+                        endIndex = i + 120
                     #print "end: " + str(endIndex);
 
-                    phrases.append(review[startIndex:endIndex])
+                    phrases.append(("..." + review[startIndex:endIndex] + "...").decode('utf-8'))
     return phrases

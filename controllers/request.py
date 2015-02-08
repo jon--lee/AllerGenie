@@ -10,8 +10,8 @@ jinja = jinja2.Environment(
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 peanuts = ["peanut"]
-shellfish = ["shellfish"]
-wheat = ["wheat"]
+shellfish = ["shellfish", "crab", "lobster", "prawns", "shrimp"]
+wheat = ["wheat", "bread", "cereal", "pasta"]
 
 base_url = "http://www.yelp.com"
 
@@ -32,16 +32,16 @@ class RequestPage(webapp2.RequestHandler):
         phrases = processor.process(reviews, allergyKey[allergy])
         template = jinja.get_template("/request.html")
         response = "Inconclusive"
-        if(len(phrases) > 0):
+        if(len(phrases) == 0):
             response = "This place looks safe. We did not find any indicators related to your allergy."
         if(len(phrases) > 0):
             response = "We found a few indicators related to your allergy."
         if(len(phrases) > 3):
-            response = "Maybe you should avoid this place.<br>We found several indicators related to your allergy."
+            response = "Maybe you should avoid this place.\nWe found several indicators related to your allergy."
         if(len(phrases) > 15):
-            response = "You should probably avoid this place.<br> We found MANY indicators related to your allergy."
+            response = "You should probably avoid this place.\nWe found MANY indicators related to your allergy."
         template_values = {"searchTerm": searchTerm, "loc": loc, "allergy": allergy, "phrases": phrases, "response": response}
-        self.response.out.write(template.render(template_values))
+        self.response.out.write(template.render(template_values).encode('utf-8'))
         
     def post(self):
         self.response.out.write("post request hello world");

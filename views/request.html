@@ -3,37 +3,82 @@
 <html>
 	<head>
 		<title>Placeholder</title>
-		<link type='text/css' re='stylesheet' href='/stylesheets/request.css'>
+		<link type='text/css' rel='stylesheet' href='/stylesheets/home.css'>
 		<script src='/js/jquery-1.11.2.min.js'></script>
 	</head>
 	<body>
-	<input type='text' name='searchTerm' id='searchBox' value='{{ searchTerm }}' />
-	<input type='text' name='loc' id='locBox' value='{{ loc }}' />
-		<select id="allergyBox">
-			<option value="peanut" 
-			{% if allergy == "peanut" %}
-				selected="selected"
-			{% endif %}
-			>Peanuts</option>
-			<option value="shellfish" 
-			{% if allergy == "shellfish" %}
-				selected="selected"
-			{% endif %}
-			>Shellfish</option>
-			<option value="wheat" 
-			{% if allergy == "wheat" %}
-				selected="selected"
-			{% endif %}
-			>Wheat</option>
-		</select>
-		<br>
-		<button>Submit</button>
-		<br>
-		<div id='printable'>
-			
-		</div>
+	<div id='container'>
+	<div id='header'>
+			<div id='logoContainer'>Placeholder</div>
+	</div>
+
+	<div id='content'>
+
+	<div id='section'>
+		<center>
+			<h2>Search restaurants for foods<br>that may affect your allergy</h2>
 		
+			<input type='text' placeholder='Zachary&#39;s, Five Guys, Chipotle...' name='searchTerm' id='searchBox' value='{{ searchTerm }}' />
+			<input type='text' placeholder='Location' name='loc' id='locBox' value='{{ loc }}' />
+			<select id="allergyBox">
+				<option value="peanut" 
+					{% if allergy == "peanut" %}
+						selected="selected"
+					{% endif %}
+				>Peanuts</option>
+				<option value="shellfish" 
+					{% if allergy == "shellfish" %}
+						selected="selected"
+					{% endif %}
+				>Shellfish</option>
+				<option value="wheat" 
+				{% if allergy == "wheat" %}
+					selected="selected"
+				{% endif %}
+				>Wheat</option>
+			</select>
+			<br>
+			<button>Submit</button>
+			<br>
+			<br>
+			<div id='printable'>
+				<h3>{{ response }} <br> <span id='details'>See Details</span></h3>
+			</div>
+		</center>
+			
+		
+	</div>
+	</div>
+	<center>
+		<div id='reviews'>
+			{% for phrase in phrases %}
+				<div id='review'>
+					&#34;{{ phrase | safe }}&#34;
+				</div>
+			{% endfor %}
+		
+		</div>
+	</center>
+		<div id='footer'>
+			<ul>
+				<li>
+					Created by Jonathan Lee, David Lin, Jackelyn Shen, and Harry Xu of the Harker School, 2015
+				</li>
+
+			</ul>
+
+		</div>
+
+	</div>	
 	</body>
 	<script src="/js/request.js"></script>
+	<script>
+	$('#details').click(function(){
+		$('html, body').animate({
+        	scrollTop: $("#reviews").offset().top
+    		}, 500);
+	});
+
+	</script>
 </html>
 {% endautoescape %}
