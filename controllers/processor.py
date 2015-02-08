@@ -40,14 +40,16 @@ def process(reviews, keywords):
 
                     if(i - startIndex > 120):
                         startIndex = i - 120
-                    #looks a space to indicate the end of a word
-                    while review[startIndex] != “ “
-                       startIndex += 1
+                    #looks for a space to indicate the end of a word
+                        while review[startIndex] != “ “:
+                            startIndex += 1
 
                         
                     #print "start: " + str(startIndex)
                     if (endIndex - i > 120):
                         endIndex = i + 120
+                        while review[endIndex] != “ “:
+                            endIndex -= 1
                     #print "end: " + str(endIndex);
 
                     phrases.append(("..." + review[startIndex:endIndex] + "...").decode('utf-8'))
