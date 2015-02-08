@@ -4,7 +4,11 @@ import re
 # @param    url             url to the site that the reviews will be scraped from
 # @return   reviewList      list of all the unprocessed reviews on the page(s)
 def parse(url):
-    response = urllib2.urlopen(url)
+     
+    opener = urllib2.build_opener()
+    opener.addHeaders = [('User-agent', 'Mozilla/5.0')]
+    response.opener.open(url)
+    #response = urllib2.urlopen(url)
     htmlString = response.read()
     startindex = htmlString.find("<p itemprop")
 

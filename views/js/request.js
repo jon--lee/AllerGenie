@@ -31,7 +31,7 @@ $("button").click(function(){
 			{
 				link = link.substring(0, 51) + "..."
 			}
-			html += "<a href='/request/?url=" + data[result][1] + "&allergy=" + allergy + "&searchTerm=" + searchTerm + "&loc=" + loc + "'>"
+			html += "<a href='/request/?url=" + data[result][1] + "&allergy=" + allergy + "&searchTerm=" + escape(searchTerm) + "&loc=" + escape(loc) + "'>"
 	       		html += "<div><li>" + display + "</li>"
 			html += "<span style='color:#919191;'>" + link + "</span>"
 			html += "</div></a>"

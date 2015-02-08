@@ -4,6 +4,7 @@ import json
 import urllib2
 import re
 url_base = "http://www.yelp.com/search?"
+#url_base = "http://www.yelp.com/search"
 keyword = 'href="/biz/'
 
 def striphtml(data):
@@ -23,9 +24,12 @@ class SearchPage(webapp2.RequestHandler):
         params = "find_desc=" + searchTerm + "&find_loc=" + loc
         url = url_base + params
         
-        
+               
+        opener = urllib2.build_opener()
+        opener.addHeaders = [('User-agent', 'Mozilla/5.0')]
+        response = opener.open(url)
 
-        response = urllib2.urlopen(url)
+        #response = urllib2.urlopen(url)
         htmlString = response.read()
         
         startIndex = 0

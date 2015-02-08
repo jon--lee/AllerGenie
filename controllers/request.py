@@ -12,12 +12,14 @@ jinja = jinja2.Environment(
 peanuts = ["peanut"]
 shellfish = ["shellfish", "crab", "lobster", "prawns", "shrimp"]
 wheat = ["wheat", "bread", "cereal", "pasta"]
+eggs = [" egg", "omelet"]
 
 base_url = "http://www.yelp.com"
 
 allergyKey = {"peanut": peanuts,
     "shellfish": shellfish,
-    "wheat": wheat
+    "wheat": wheat,
+    "eggs": eggs
     }
 
 class RequestPage(webapp2.RequestHandler):
@@ -27,7 +29,7 @@ class RequestPage(webapp2.RequestHandler):
         allergy = self.request.get('allergy')
         loc = self.request.get('loc')
         #self.response.out.write(url)
-        reviews = parser.parseMultiplePages(url, 60)
+        reviews = parser.parseMultiplePages(url, 39)
         #reviews = ["more text here. hello some peanut. and another peanut over here", "none here do nothing.", "nothing here as well."]
         phrases = processor.process(reviews, allergyKey[allergy])
         template = jinja.get_template("/request.html")

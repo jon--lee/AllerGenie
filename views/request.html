@@ -2,14 +2,14 @@
 {% autoescape true %}
 <html>
 	<head>
-		<title>Placeholder</title>
+		<title>AllerGenie</title>
 		<link type='text/css' rel='stylesheet' href='/stylesheets/home.css'>
 		<script src='/js/jquery-1.11.2.min.js'></script>
 	</head>
 	<body>
 	<div id='container'>
 	<div id='header'>
-			<div id='logoContainer'>Placeholder</div>
+			<div id='logoContainer'>AllerGenie</div>
 	</div>
 
 	<div id='content'>
@@ -36,6 +36,11 @@
 					selected="selected"
 				{% endif %}
 				>Wheat</option>
+				<option value="eggs"
+				{% if allergy == "wheat" %}
+					selected="selected"
+				{% endif %}
+				>Eggs</option>
 			</select>
 			<br>
 			<button>Submit</button>
