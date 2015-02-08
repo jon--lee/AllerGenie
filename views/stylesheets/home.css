@@ -93,6 +93,11 @@ h3
 	-webkit-appearance: none;
 }
 
+#printable a div span
+{
+	font-size:10px;
+}
+
 #printable a
 {
 	text-decoration:none;
@@ -111,6 +116,9 @@ h3
 	background:#EEE;
 	color:#FA5858;
 }
+
+
+
 
 #printable h3 span 
 {

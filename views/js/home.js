@@ -22,12 +22,19 @@ $("button").click(function(){
 		for(result in data)
 		{
 			var display = data[result][0];
+			var link = data[result][1].substring(5)
 			if(display.length > 70)
 			{
 				display = display.substring(0, 71) + "..."
-			}	
+			}
+			if (link.length > 50)
+			{
+				link = link.substring(0, 51) + "..."
+			}
 			html += "<a href='/request/?url=" + data[result][1] + "&allergy=" + allergy + "&searchTerm=" + searchTerm + "&loc=" + loc + "'>"
-	       		html += "<div><li><span>" + display + "</span></li></div></a>";
+	       		html += "<div><li>" + display + "</li>"
+			html += "<span style='color:#919191;'>" + link + "</span>"
+			html += "</div></a>"
 		}
 		console.log(html);
 		$('#printable').html(html);
