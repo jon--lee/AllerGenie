@@ -2,9 +2,15 @@ import webapp2
 import json
 
 import urllib2
-
+import re
 url_base = "http://www.yelp.com/search?"
 keyword = 'href="/biz/'
+
+def striphtml(data):
+    p = re.compile(r'<.*?>')
+    return p.sub('', data)
+
+
 class SearchPage(webapp2.RequestHandler):
     def post(self):
         req = json.loads(self.request.body);
@@ -28,9 +34,15 @@ class SearchPage(webapp2.RequestHandler):
         for i in range(0, 10):
             startIndex = htmlString.find(keyword, endIndex + 3) + 6
             endIndex = htmlString.find('"', startIndex + 6)
-            if (i % 2 == 0):            
-                results.append(htmlString[startIndex:endIndex])
-        
+            if (i % 2 == 1):            
+                link = htmlString[startIndex:endIndex]
+                si = htmlString.find(">", endIndex + 2)  + 1
+                ei = htmlString.find("</a>", si)
+                name = striphtml(htmlString[si:ei])
+                print name
+                tup = (name, link)
+                #results.append(htmlString[startIndex:endIndex])
+                results.append(tup)
         
         self.response.out.write(json.dumps(results));
     

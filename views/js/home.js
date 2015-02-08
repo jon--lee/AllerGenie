@@ -14,19 +14,19 @@ $("button").click(function(){
 	}).done(function(data){
 		//alert("received data!");
 		//var array = data.split(',');
-		console.log(data[0]);
-		var results = JSON.stringify(data);
+		//console.log(data[0]);
+		//var results = JSON.stringify(data);
 		//console.log(results);
-		var results = results.split(',');
+		//var results = results.split(',');
 		var html = "";
 		for(result in data)
 		{
-			var display = data[result];
+			var display = data[result][0];
 			if(display.length > 70)
 			{
 				display = display.substring(0, 71) + "..."
 			}	
-			html += "<a href='/request/?url=" + data[result] + "&allergy=" + allergy + "&searchTerm=" + searchTerm + "&loc=" + loc + "'>"
+			html += "<a href='/request/?url=" + data[result][1] + "&allergy=" + allergy + "&searchTerm=" + searchTerm + "&loc=" + loc + "'>"
 	       		html += "<div><li><span>" + display + "</span></li></div></a>";
 		}
 		console.log(html);
