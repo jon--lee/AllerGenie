@@ -9,6 +9,8 @@ handlers:
   static_dir: views/stylesheets
 - url: /js
   static_dir: views/js
+- url: /media
+  static_dir: views/media
 - url: /.*
   script: main.app
 

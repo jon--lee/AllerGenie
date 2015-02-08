@@ -1,0 +1,153 @@
+body
+{
+	font-family:helvetica, arial;
+	margin: 0px;
+}
+
+#header
+{
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue";
+	font-weight: lighter;
+	width: 100%;
+	height: 70px;
+	background:#f1f1f1;
+	color: #919191;
+	margin:0px;
+}
+
+#container
+{
+	min-width:800px;
+	width: 100%;
+	min-height:400px;
+	margin:0px;
+}
+#logoContainer
+{
+	position:relative;
+	margin-left:100px;
+	padding-top:10px;
+	font-size:40px;
+}
+
+#content
+{
+	width:100%;
+    	height:500px;
+    	padding-top:20px;
+    	background-size: 100% 100%;
+    	background-repeat: no-repeat;
+	background-image: url('../media/banner2.jpg');
+}
+
+#section
+{
+	width: 420px;
+	min-height:300px;
+	background:#F1F1F1;
+	margin: auto;
+	padding: 10px;
+	border-radius:10px;
+	opacity:.90;
+}
+#section h2
+{
+	font-size:16;
+	font-weight:lighter;
+}
+#section input
+{
+	outline:none;
+	height:50px;
+	width:350px;
+	border:0px;
+	padding-left:10px;
+	padding-right:10px;
+	font-size:14px;
+	border-bottom:1px solid #E1E1E1;
+}
+#section select
+{
+	background:#FFF;
+	width: 370px;
+	padding:10px;
+	margin-left:5px;
+	color:
+	font-size:16px;
+	border:0px;
+	border-radius:0;
+	height:40px;
+	outline:none;
+	font-size:16px;
+	-webkit-appearance: none;
+}
+
+#printable a
+{
+	text-decoration:none;
+	color:black;
+	text-align:center;
+}
+
+#printable div
+{
+	background:#FFF;
+	width:350px;
+	border:1px solid #E1E1E1;
+	height:30px;
+
+
+}
+
+#section button
+{
+	outline:none;
+	background:#41cb41;
+	border:0px;
+	border-bottom-left-radius:3px;
+	border-bottom-right-radius:3px;
+	color:white;
+	height:40px;
+	width:370px;
+	margin-left:5px;
+	font-size:20px;
+	font-weight:normal;
+	cursor:pointer;
+}
+
+#section button:active
+{
+    background:#3eb93e;
+}
+
+
+#footer
+{
+	font-size:12px;
+	color:#919191;
+	padding-top:20px;
+	position:fixed;
+	bottom:0px;
+	height:40px;
+	left:0px;
+	background:#f1f1f1;
+	width:100%;
+	border-top:1px solid #E5E5E5;
+}
+
+
+
+#footer ul {
+	display:inline;
+	list-style:none;
+    float:right;
+    margin-right:100px;
+    margin-top:5px;
+}
+#footer ul li{
+	margin-left:20px;
+    margin-right:20px;
+	list-style:none;
+	display:inline;	
+}
+

@@ -2,23 +2,48 @@
 <html>
 	<head>
 		<title>Placeholder</title>
-		<link type='text/css' re='stylesheet' href='/stylesheets/main.css'>
+		<link type='text/css' rel='stylesheet' href='/stylesheets/home.css'>
 		<script src='/js/jquery-1.11.2.min.js'></script>
 	</head>
 	<body>
-		<input type='text' name='searchTerm' id='searchBox' value='five guys' />
-		<input type='text' name='loc' id='locBox' value='cupertino' />
-		<select id="allergyBox">
-			<option value="peanut">Peanuts</option>
-			<option value="shellfish">Shellfish</option>
-			<option value="wheat">Wheat</option>
-		</select>
-		<br>
-		<button>Submit</button>
-		<br>
-		<div id='printable'>
+	<div id='container'>
+		
+	
+		<div id='header'>
+			<div id='logoContainer'>Placeholder</div>
+		</div>
+		<div id='content'>
+		<div id='section'>
+			<center>
+				<h2>Search restaurants for foods<br>that may affect your allergy</h2>
+				<input type='text' placeholder='Zachary&#39;s, Five Guys, Chipotle...' name='searchTerm' id='searchBox' value='' />
+				<input type='text' placeholder='Location' name='loc' id='locBox' value='' />
+				<select id="allergyBox">
+					<option value="peanut">Peanuts</option>
+					<option value="shellfish">Shellfish</option>
+					<option value="wheat">Wheat</option>
+				</select>
+				<br>
+				<button>Submit</button>
+			
+				<br>
+				<div id='printable'>
+
+				</div>
+			</center>
+		</div>
+		</div>
+		
+		<div id='footer'>
+			<ul>
+				<li>
+					Created by Jonathan Lee, David Lin, Jackelyn Shen, and Harry Xu of the Harker School, 2015
+				</li>
+
+			</ul>
 
 		</div>
+	</div>
 		
 	</body>
 	<script src="/js/home.js"></script>
