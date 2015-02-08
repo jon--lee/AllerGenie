@@ -1,0 +1,39 @@
+<!DocType html>
+{% autoescape true %}
+<html>
+	<head>
+		<title>Placeholder</title>
+		<link type='text/css' re='stylesheet' href='/stylesheets/request.css'>
+		<script src='/js/jquery-1.11.2.min.js'></script>
+	</head>
+	<body>
+	<input type='text' name='searchTerm' id='searchBox' value='{{ searchTerm }}' />
+	<input type='text' name='loc' id='locBox' value='{{ loc }}' />
+		<select id="allergyBox">
+			<option value="peanut" 
+			{% if allergy == "peanut" %}
+				selected="selected"
+			{% endif %}
+			>Peanuts</option>
+			<option value="shellfish" 
+			{% if allergy == "shellfish" %}
+				selected="selected"
+			{% endif %}
+			>Shellfish</option>
+			<option value="wheat" 
+			{% if allergy == "wheat" %}
+				selected="selected"
+			{% endif %}
+			>Wheat</option>
+		</select>
+		<br>
+		<button>Submit</button>
+		<br>
+		<div id='printable'>
+			
+		</div>
+		
+	</body>
+	<script src="/js/request.js"></script>
+</html>
+{% endautoescape %}
